@@ -1,0 +1,183 @@
+
+C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc>npm install -g jest
+
+changed 290 packages in 31s
+
+32 packages are looking for funding
+  run `npm fund` for details
+
+C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc>npm install
+
+up to date, audited 604 packages in 7s
+
+47 packages are looking for funding
+  run `npm fund` for details
+
+19 vulnerabilities (10 moderate, 6 high, 3 critical)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  STSWENG-TDD-with-Jest/node-unit-test/controllers/post.test.js
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\STSWENG-TDD-with-Jest\node-unit-test\controllers\post.test.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){import { addPost } from "./postController";
+                                                                                      ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
+
+ FAIL  STSWENG-TDD-with-Jest/node-unit-mvc/tests/post.test.js
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    SyntaxError: C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\STSWENG-TDD-with-Jest\node-unit-mvc\tests\post.test.js: Unexpected token (184:3)
+
+      182 |             sinon.assert.calledOnce(res.status(500).end);
+      183 |         });
+    > 184 | });
+          |    ^
+
+      at Parser._raise (node_modules/@babel/parser/src/parser/error.js:147:45)
+      at Parser.raiseWithData (node_modules/@babel/parser/src/parser/error.js:142:17)
+      at Parser.raise (node_modules/@babel/parser/src/parser/error.js:91:17)
+      at Parser.unexpected (node_modules/@babel/parser/src/parser/util.js:174:16)
+      at Parser.parseExprAtom (node_modules/@babel/parser/src/parser/expression.js:1296:22)
+      at Parser.parseExprSubscripts (node_modules/@babel/parser/src/parser/expression.js:668:23)
+      at Parser.parseUpdate (node_modules/@babel/parser/src/parser/expression.js:648:21)
+      at Parser.parseMaybeUnary (node_modules/@babel/parser/src/parser/expression.js:619:23)
+      at Parser.parseMaybeUnaryOrPrivate (node_modules/@babel/parser/src/parser/expression.js:372:14)
+      at Parser.parseExprOps (node_modules/@babel/parser/src/parser/expression.js:382:23)
+
+C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\node_modules\mongodb\lib\connection_string.js:291
+        throw new error_1.MongoParseError(`${optionWord} ${Array.from(unsupportedOptions).join(', ')} ${isOrAre} not supported`);
+              ^
+
+MongoParseError: option usefindandmodify is not supported
+    at Object.parseOptions (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\node_modules\mongodb\src\connection_string.ts:358:11)
+    at new MongoClient (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\node_modules\mongodb\src\mongo_client.ts:327:22)
+    at C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:779:16
+    at new Promise (<anonymous>)
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:776:19)
+    at C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+
+Node.js v18.16.1
+C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\node_modules\mongodb\lib\connection_string.js:291
+        throw new error_1.MongoParseError(`${optionWord} ${Array.from(unsupportedOptions).join(', ')} ${isOrAre} not supported`);
+              ^
+
+MongoParseError: option usefindandmodify is not supported
+    at Object.parseOptions (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\node_modules\mongodb\src\connection_string.ts:358:11)
+    at new MongoClient (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\node_modules\mongodb\src\mongo_client.ts:327:22)
+    at C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:779:16
+    at new Promise (<anonymous>)
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:776:19)
+    at C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+
+Node.js v18.16.1
+C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\node_modules\mongodb\lib\connection_string.js:291
+        throw new error_1.MongoParseError(`${optionWord} ${Array.from(unsupportedOptions).join(', ')} ${isOrAre} not supported`);
+              ^
+
+MongoParseError: option usefindandmodify is not supported
+    at Object.parseOptions (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\node_modules\mongodb\src\connection_string.ts:358:11)
+    at new MongoClient (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\node_modules\mongodb\src\mongo_client.ts:327:22)
+    at C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:779:16
+    at new Promise (<anonymous>)
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:776:19)
+    at C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+
+Node.js v18.16.1
+C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\node_modules\mongodb\lib\connection_string.js:291
+        throw new error_1.MongoParseError(`${optionWord} ${Array.from(unsupportedOptions).join(', ')} ${isOrAre} not supported`);
+              ^
+
+MongoParseError: option usefindandmodify is not supported
+    at Object.parseOptions (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\node_modules\mongodb\src\connection_string.ts:358:11)
+    at new MongoClient (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\node_modules\mongodb\src\mongo_client.ts:327:22)
+    at C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:779:16
+    at new Promise (<anonymous>)
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:776:19)
+    at C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+
+Node.js v18.16.1
+ FAIL  tests/post.test.js
+  ● Test suite failed to run
+
+    Jest worker encountered 4 child process exceptions, exceeding retry limit
+
+      at ChildProcessWorker.initialize (node_modules/jest-worker/build/workers/ChildProcessWorker.js:185:21)
+
+Test Suites: 3 failed, 3 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        8.243 s
+Ran all test suites.
