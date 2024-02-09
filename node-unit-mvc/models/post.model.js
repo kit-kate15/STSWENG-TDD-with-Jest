@@ -17,3 +17,8 @@ exports.createPost = (obj, next) => {
         next(err, post)
     }) 
 }
+
+// TODO: create updatePost implementation
+exports.updatePost = () => {
+
+}

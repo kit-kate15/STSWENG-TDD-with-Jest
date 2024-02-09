@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const databaseURL = 'mongodb://localhost:27017/logindb';
 
 const options = { useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false };
+  useUnifiedTopology: true
+};
 
 mongoose.connect(databaseURL, options);
 

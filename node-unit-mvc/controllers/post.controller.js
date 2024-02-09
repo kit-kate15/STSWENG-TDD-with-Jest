@@ -13,7 +13,7 @@ PostController.create = (req, res) => {
 };
 
 PostController.update = (req, res) => {
-
+    
 };
 
 PostController.findPost = (req, res) => {
