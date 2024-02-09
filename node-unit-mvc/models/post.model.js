@@ -21,5 +21,10 @@ exports.createPost = (obj, next) => {
 
 // TODO: create updatePost implementation
 exports.updatePost = (obj, next) => {
-    
+    const query = { _id: obj._id };
+    const update = { title: obj.title, content: obj.content };
+
+    Post.findOneAndUpdate(query, update, {new: true}, (err, post) => {
+        next(err, post);
+    })
 }

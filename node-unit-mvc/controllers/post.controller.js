@@ -10,11 +10,20 @@ PostController.create = (req, res) => {
             return res.json(post);
         }
     })
-
 };
 
 PostController.update = (req, res) => {
-    
+    return PostModel.updatePost(req.body, { new: true }, (err, post) => {
+        if (err) {
+            return res.status(500).end();
+        }
+        else if (!post) {
+            return res.status(404).end();
+        }
+        else {
+            return res.json(post);
+        }
+    })
 };
 
 PostController.findPost = (req, res) => {

@@ -72,7 +72,7 @@ describe('Post controller', () => {
 
             // Act
             PostController.create(req, res);
-
+            
             // Assert
             sinon.assert.calledWith(PostModel.createPost, req.body);
             sinon.assert.calledWith(res.status, 500);
@@ -93,11 +93,20 @@ describe('Post controller', () => {
                 status: sinon.stub().returns({ end: sinon.spy() })
             };
             expectedResult = req.body
+
+            //Stub the updatePost method before each test case
+            updatePostStub = sinon.stub(PostModel, 'updatePost');
         });
+
+        afterEach(() => {
+            //Restore the stubbed updatePost method after each test case
+            updatePostStub.restore();
+        })
 
         it('should return updated post', () => {
             // Arrange
-            updatePostStub = sinon.stub(PostModel, 'updatePost').yields(null, expectedResult);
+            //updatePostStub = sinon.stub(PostModel, 'updatePost').yields(null, expectedResult);
+            updatePostStub.yields(null, expectedResult);
 
             // Act
             PostController.update(req, res);
@@ -111,8 +120,9 @@ describe('Post controller', () => {
 
         it('should return status 404 for nonexisting post', () => {
             // Arrange
-            updatePostStub = sinon.stub(PostModel, 'updatePost').yields(null, null);
-
+            //updatePostStub = sinon.stub(PostModel, 'updatePost').yields(null, null);
+            updatePostStub.yields(null, null);            
+            
             // Act
             PostController.update(req, res);
 
@@ -124,7 +134,8 @@ describe('Post controller', () => {
 
         it('should return status 500 on server error', () => {
             // Arrange
-            updatePostStub = sinon.stub(PostModel, 'updatePost').yields(error);
+            //updatePostStub = sinon.stub(PostModel, 'updatePost').yields(error);
+            updatePostStub.yields(error);
 
             // Act
             PostController.update(req, res);
