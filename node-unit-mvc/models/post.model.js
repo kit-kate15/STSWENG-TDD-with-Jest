@@ -30,6 +30,10 @@ exports.updatePost = (obj, next) => {
 }
 
 //TODO: create findPost implementation
-exports.findpost = (obj, next) => {
-    
+exports.findPost = (obj, next) => {
+    const found = { _id: obj.id };
+
+    Post.findOne(found, obj, (err, post) => {
+        next(err, post);
+    })
 }

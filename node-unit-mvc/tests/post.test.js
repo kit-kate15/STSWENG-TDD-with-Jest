@@ -150,6 +150,8 @@ describe('Post controller', () => {
     });
 
     describe('findPost', () => {
+        var findPostStub;
+
         beforeEach(() => {
             res = {
                 json: sinon.spy(),
@@ -159,26 +161,37 @@ describe('Post controller', () => {
         });
     
         it('should return find post object', () => {
-            sinon.stub(PostModel, 'findPost').yields(null, expectedResult);
+            findPostStub = sinon.stub(PostModel, 'findPost').yields(null, expectedResult);
+
             PostController.findPost(req, res); // Corrected to use PostController.findPost
-            sinon.assert.calledWith(PostModel.findPost, req.params.title);
-            sinon.assert.calledWith(res.json, sinon.match({ model: req.body.content }));
-            sinon.assert.calledWith(res.json, sinon.match({ manufacturer: req.body.author }));
+
+            sinon.assert.calledWith(PostModel.findPost, req.body);
+            sinon.assert.calledWith(res.json, sinon.match({ title: req.body.title }));
+            sinon.assert.calledWith(res.json, sinon.match({ content: req.body.content }));
+            sinon.assert.calledWith(res.json, sinon.match({ author: req.body.author }));
         });
     
         it('should return 404 for non-existing post', () => {
-            sinon.stub(PostModel, 'findPost').yields(null, null); 
+            // findPostStub = sinon.stub(PostModel, 'findPost').yields(null, null); 
+            findPostStub.yields(null, null);
+
             PostController.findPost(req, res); 
-            sinon.assert.calledWith(PostModel.findPost, req.params.title);
+
+            sinon.assert.calledWith(PostModel.findPost, req.body);
             sinon.assert.calledWith(res.status, 404);
             sinon.assert.calledOnce(res.status(404).end);
         });
     
         it('should return status 500 on server error', () => {
-            sinon.stub(PostModel, 'findPost').yields(error); 
+            // findPostStub = sinon.stub(PostModel, 'findPost').yields(error); 
+            findPostStub.yields(error);
+
             PostController.findPost(req, res); 
-            sinon.assert.calledWith(PostModel.findPost, req.params.title);
+
+            sinon.assert.calledWith(PostModel.findPost, req.body);
             sinon.assert.calledWith(res.status, 500);
             sinon.assert.calledOnce(res.status(500).end);
         });
     });
+
+})
