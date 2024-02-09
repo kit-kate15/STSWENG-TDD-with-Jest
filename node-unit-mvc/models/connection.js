@@ -1,3 +1,10 @@
+/*
+ * STSWENG -XX22
+ * Test-Driven Development (TDD) with Jest
+ * Members: Rojo, Kate Lynn
+ *          Romblon, Kathleen Mae 
+ */
+
 // This file is initializing the mongodb connection
 // and exporting it for use in all other files through the module.exports
 const mongoose = require('mongoose');

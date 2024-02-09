@@ -1,3 +1,10 @@
+/*
+ * STSWENG -XX22
+ * Test-Driven Development (TDD) with Jest
+ * Members: Rojo, Kate Lynn
+ *          Romblon, Kathleen Mae 
+ */
+
 const mongoose = require('./connection');
 
 const postSchema = new mongoose.Schema({
