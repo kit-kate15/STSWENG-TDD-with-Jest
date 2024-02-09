@@ -1,0 +1,1585 @@
+Microsoft Windows [Version 10.0.22621.3007]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ PASS  tests/post.test.js
+  Post controller
+    create
+      √ should return the created post object (7 ms)
+      √ should return status 500 on server error (2 ms)
+    update
+      √ should return updated post (2 ms)
+      √ should return status 404 for nonexisting post (2 ms)
+      √ should return status 500 on server error (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        2.174 s
+Ran all test suites.
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797
+  const serverSelectionError = new ServerSelectionError();
+                               ^
+
+MongooseServerSelectionError: Error: connect ECONNREFUSED ::1:27017
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797:32)
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+    at Mongoose.Object.<anonymous>.Mongoose.connect (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:329:20)
+    at Object.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\models\connection.js:10:10)
+    at Runtime._execModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1646:24)
+    at Runtime._loadModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1185:12) {
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        _hostAddress: HostAddress { isIPv6: false, host: 'localhost', port: 27017 },
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 34428717,
+        lastWriteDate: 0,
+        error: MongoNetworkError: Error: connect ECONNREFUSED ::1:27017
+            at connectionFailureError (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:390:14)
+            at Socket.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:358:16)
+            at Object.onceWrapper (node:events:628:26)
+            at Socket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21)
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    logicalSessionTimeoutMinutes: undefined
+  }
+}
+
+Node.js v18.16.1
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  tests/post.test.js
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    SyntaxError: C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\tests\post.test.js: Unexpected token (184:7)
+
+      182 |             sinon.assert.calledOnce(res.status(500).end);
+      183 |         });
+    > 184 |     });
+          |        ^
+
+      at Parser._raise (node_modules/@babel/parser/src/parser/error.js:147:45)
+      at Parser.raiseWithData (node_modules/@babel/parser/src/parser/error.js:142:17)
+      at Parser.raise (node_modules/@babel/parser/src/parser/error.js:91:17)
+      at Parser.unexpected (node_modules/@babel/parser/src/parser/util.js:174:16)
+      at Parser.parseExprAtom (node_modules/@babel/parser/src/parser/expression.js:1296:22)
+      at Parser.parseExprSubscripts (node_modules/@babel/parser/src/parser/expression.js:668:23)
+      at Parser.parseUpdate (node_modules/@babel/parser/src/parser/expression.js:648:21)
+      at Parser.parseMaybeUnary (node_modules/@babel/parser/src/parser/expression.js:619:23)
+      at Parser.parseMaybeUnaryOrPrivate (node_modules/@babel/parser/src/parser/expression.js:372:14)
+      at Parser.parseExprOps (node_modules/@babel/parser/src/parser/expression.js:382:23)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        0.751 s, estimated 3 s
+Ran all test suites.
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm install
+
+up to date, audited 513 packages in 8s
+
+46 packages are looking for funding
+  run `npm fund` for details
+
+19 vulnerabilities (10 moderate, 6 high, 3 critical)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  tests/post.test.js
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    SyntaxError: C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\tests\post.test.js: Unexpected token (184:7)
+
+      182 |             sinon.assert.calledOnce(res.status(500).end);
+      183 |         });
+    > 184 |     });
+          |        ^
+
+      at Parser._raise (node_modules/@babel/parser/src/parser/error.js:147:45)
+      at Parser.raiseWithData (node_modules/@babel/parser/src/parser/error.js:142:17)
+      at Parser.raise (node_modules/@babel/parser/src/parser/error.js:91:17)
+      at Parser.unexpected (node_modules/@babel/parser/src/parser/util.js:174:16)
+      at Parser.parseExprAtom (node_modules/@babel/parser/src/parser/expression.js:1296:22)
+      at Parser.parseExprSubscripts (node_modules/@babel/parser/src/parser/expression.js:668:23)
+      at Parser.parseUpdate (node_modules/@babel/parser/src/parser/expression.js:648:21)
+      at Parser.parseMaybeUnary (node_modules/@babel/parser/src/parser/expression.js:619:23)
+      at Parser.parseMaybeUnaryOrPrivate (node_modules/@babel/parser/src/parser/expression.js:372:14)
+      at Parser.parseExprOps (node_modules/@babel/parser/src/parser/expression.js:382:23)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        0.616 s
+Ran all test suites.
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>jest --watch
+No tests found related to files changed since last commit.
+Press `a` to run all tests, or run Jest with `--watchAll`.
+
+Watch Usage
+ › Press a to run all tests.
+ › Press f to run only failed tests.
+ › Press p to filter by a filename regex pattern.
+ › Press t to filter by a test name regex pattern.
+ › Press q to quit watch mode.
+ › Press Enter to trigger a test run.
+No tests found related to files changed since last commit.
+Press `a` to run all tests, or run Jest with `--watchAll`.
+
+Watch Usage: Press w to show more.
+ FAIL  tests/post.test.js
+  ● Test suite failed to run
+
+    SyntaxError: C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\tests\post.test.js: Unexpected token, expected "," (186:1)
+
+      184 |     });
+      185 |
+    > 186 | }
+          |  ^
+
+      at Parser._raise (node_modules/@babel/parser/src/parser/error.js:147:45)
+      at Parser.raiseWithData (node_modules/@babel/parser/src/parser/error.js:142:17)
+      at Parser.raise (node_modules/@babel/parser/src/parser/error.js:91:17)
+      at Parser.unexpected (node_modules/@babel/parser/src/parser/util.js:174:16)
+      at Parser.expect (node_modules/@babel/parser/src/parser/util.js:134:28)
+      at Parser.parseCallExpressionArguments (node_modules/@babel/parser/src/parser/expression.js:975:14)
+      at Parser.parseCoverCallAndAsyncArrowHead (node_modules/@babel/parser/src/parser/expression.js:852:29)
+      at Parser.parseSubscript (node_modules/@babel/parser/src/parser/expression.js:732:19)
+      at Parser.parseSubscripts (node_modules/@babel/parser/src/parser/expression.js:689:19)
+      at Parser.parseExprSubscripts (node_modules/@babel/parser/src/parser/expression.js:674:17)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        1.105 s
+Ran all test suites related to changed files.
+
+Watch Usage: Press w to show more.
+ FAIL  tests/post.test.js
+  ● Test suite failed to run
+
+    SyntaxError: C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\tests\post.test.js: Unexpected token, expected "," (186:1)
+
+      184 |     });
+      185 |
+    > 186 | }
+          |  ^
+
+      at Parser._raise (node_modules/@babel/parser/src/parser/error.js:147:45)
+      at Parser.raiseWithData (node_modules/@babel/parser/src/parser/error.js:142:17)
+      at Parser.raise (node_modules/@babel/parser/src/parser/error.js:91:17)
+      at Parser.unexpected (node_modules/@babel/parser/src/parser/util.js:174:16)
+      at Parser.expect (node_modules/@babel/parser/src/parser/util.js:134:28)
+      at Parser.parseCallExpressionArguments (node_modules/@babel/parser/src/parser/expression.js:975:14)
+      at Parser.parseCoverCallAndAsyncArrowHead (node_modules/@babel/parser/src/parser/expression.js:852:29)
+      at Parser.parseSubscript (node_modules/@babel/parser/src/parser/expression.js:732:19)
+      at Parser.parseSubscripts (node_modules/@babel/parser/src/parser/expression.js:689:19)
+      at Parser.parseExprSubscripts (node_modules/@babel/parser/src/parser/expression.js:674:17)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        0.315 s
+Ran all test suites related to changed files.
+
+Watch Usage: Press w to show more.
+
+Pattern Mode Usage
+ › Press Esc to exit pattern mode.
+ › Press Enter to filter by a filenames regex pattern.
+
+ pattern ›
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  tests/post.test.js
+  ● Test suite failed to run
+
+    SyntaxError: C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\tests\post.test.js: Unexpected token, expected "," (186:1)
+
+      184 |     });
+      185 |
+    > 186 | }
+          |  ^
+
+      at Parser._raise (node_modules/@babel/parser/src/parser/error.js:147:45)
+      at Parser.raiseWithData (node_modules/@babel/parser/src/parser/error.js:142:17)
+      at Parser.raise (node_modules/@babel/parser/src/parser/error.js:91:17)
+      at Parser.unexpected (node_modules/@babel/parser/src/parser/util.js:174:16)
+      at Parser.expect (node_modules/@babel/parser/src/parser/util.js:134:28)
+      at Parser.parseCallExpressionArguments (node_modules/@babel/parser/src/parser/expression.js:975:14)
+      at Parser.parseCoverCallAndAsyncArrowHead (node_modules/@babel/parser/src/parser/expression.js:852:29)
+      at Parser.parseSubscript (node_modules/@babel/parser/src/parser/expression.js:732:19)
+      at Parser.parseSubscripts (node_modules/@babel/parser/src/parser/expression.js:689:19)
+      at Parser.parseExprSubscripts (node_modules/@babel/parser/src/parser/expression.js:674:17)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        0.603 s
+Ran all test suites.
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  tests/post.test.js
+  Post controller
+    create
+      √ should return the created post object (4 ms)
+      √ should return status 500 on server error (1 ms)
+    update
+      √ should return updated post (2 ms)
+      √ should return status 404 for nonexisting post (2 ms)
+      √ should return status 500 on server error (1 ms)
+    findPost
+      × should return find post object (1 ms)
+      × should return 404 for non-existing post
+      × should return status 500 on server error
+
+  ● Post controller › findPost › should return find post object
+
+    TypeError: Cannot stub non-existent property findPost
+
+      160 |
+      161 |         it('should return find post object', () => {
+    > 162 |             sinon.stub(PostModel, 'findPost').yields(null, expectedResult);
+          |                   ^
+      163 |             PostController.findPost(req, res); // Corrected to use PostController.findPost
+      164 |             sinon.assert.calledWith(PostModel.findPost, req.params.title);
+      165 |             sinon.assert.calledWith(res.json, sinon.match({ model: req.body.content }));
+
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:78:15)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:162:19)
+
+  ● Post controller › findPost › should return 404 for non-existing post
+
+    TypeError: Cannot stub non-existent property findPost
+
+      168 |
+      169 |         it('should return 404 for non-existing post', () => {
+    > 170 |             sinon.stub(PostModel, 'findPost').yields(null, null);
+          |                   ^
+      171 |             PostController.findPost(req, res);
+      172 |             sinon.assert.calledWith(PostModel.findPost, req.params.title);
+      173 |             sinon.assert.calledWith(res.status, 404);
+
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:78:15)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:170:19)
+
+  ● Post controller › findPost › should return status 500 on server error
+
+    TypeError: Cannot stub non-existent property findPost
+
+      176 |
+      177 |         it('should return status 500 on server error', () => {
+    > 178 |             sinon.stub(PostModel, 'findPost').yields(error);
+          |                   ^
+      179 |             PostController.findPost(req, res);
+      180 |             sinon.assert.calledWith(PostModel.findPost, req.params.title);
+      181 |             sinon.assert.calledWith(res.status, 500);
+
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:78:15)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:178:19)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 5 passed, 8 total
+Snapshots:   0 total
+Time:        1.555 s
+Ran all test suites.
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797
+  const serverSelectionError = new ServerSelectionError();
+                               ^
+
+MongooseServerSelectionError: Error: connect ECONNREFUSED ::1:27017
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797:32)
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+    at Mongoose.Object.<anonymous>.Mongoose.connect (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:329:20)
+    at Object.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\models\connection.js:10:10)
+    at Runtime._execModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1646:24)
+    at Runtime._loadModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1185:12) {
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        _hostAddress: HostAddress { isIPv6: false, host: 'localhost', port: 27017 },
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 36702382,
+        lastWriteDate: 0,
+        error: MongoNetworkError: Error: connect ECONNREFUSED ::1:27017
+            at connectionFailureError (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:390:14)
+            at Socket.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:358:16)
+            at Object.onceWrapper (node:events:628:26)
+            at Socket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21)
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    logicalSessionTimeoutMinutes: undefined
+  }
+}
+
+Node.js v18.16.1
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  tests/post.test.js
+  Post controller
+    create
+      √ should return the created post object (4 ms)
+      √ should return status 500 on server error (1 ms)
+    update
+      √ should return updated post (1 ms)
+      √ should return status 404 for nonexisting post (1 ms)
+      √ should return status 500 on server error (1 ms)
+    findPost
+      × should return find post object (1 ms)
+      × should return 404 for non-existing post (1 ms)
+      × should return status 500 on server error (1 ms)
+
+  ● Post controller › findPost › should return find post object
+
+    TypeError: Cannot stub non-existent property findPost
+
+      160 |
+      161 |         it('should return find post object', () => {
+    > 162 |             sinon.stub(PostModel, 'findPost').yields(null, expectedResult);
+          |                   ^
+      163 |             PostController.findPost(req, res); // Corrected to use PostController.findPost
+      164 |             sinon.assert.calledWith(PostModel.findPost, req.params.title);
+      165 |             sinon.assert.calledWith(res.json, sinon.match({ model: req.body.content }));
+
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:78:15)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:162:19)
+
+  ● Post controller › findPost › should return 404 for non-existing post
+
+    TypeError: Cannot stub non-existent property findPost
+
+      168 |
+      169 |         it('should return 404 for non-existing post', () => {
+    > 170 |             sinon.stub(PostModel, 'findPost').yields(null, null);
+          |                   ^
+      171 |             PostController.findPost(req, res);
+      172 |             sinon.assert.calledWith(PostModel.findPost, req.params.title);
+      173 |             sinon.assert.calledWith(res.status, 404);
+
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:78:15)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:170:19)
+
+  ● Post controller › findPost › should return status 500 on server error
+
+    TypeError: Cannot stub non-existent property findPost
+
+      176 |
+      177 |         it('should return status 500 on server error', () => {
+    > 178 |             sinon.stub(PostModel, 'findPost').yields(error);
+          |                   ^
+      179 |             PostController.findPost(req, res);
+      180 |             sinon.assert.calledWith(PostModel.findPost, req.params.title);
+      181 |             sinon.assert.calledWith(res.status, 500);
+
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:78:15)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:178:19)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 5 passed, 8 total
+Snapshots:   0 total
+Time:        1.856 s, estimated 2 s
+Ran all test suites.
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797
+  const serverSelectionError = new ServerSelectionError();
+                               ^
+
+MongooseServerSelectionError: Error: connect ECONNREFUSED ::1:27017
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797:32)
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+    at Mongoose.Object.<anonymous>.Mongoose.connect (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:329:20)
+    at Object.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\models\connection.js:10:10)
+    at Runtime._execModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1646:24)
+    at Runtime._loadModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1185:12) {
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        _hostAddress: HostAddress { isIPv6: false, host: 'localhost', port: 27017 },
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 37057803,
+        lastWriteDate: 0,
+        error: MongoNetworkError: Error: connect ECONNREFUSED ::1:27017
+            at connectionFailureError (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:390:14)
+            at Socket.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:358:16)
+            at Object.onceWrapper (node:events:628:26)
+            at Socket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21)
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    logicalSessionTimeoutMinutes: undefined
+  }
+}
+
+Node.js v18.16.1
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  tests/post.test.js
+  Post controller
+    create
+      √ should return the created post object (4 ms)
+      √ should return status 500 on server error (1 ms)
+    update
+      √ should return updated post (2 ms)
+      √ should return status 404 for nonexisting post (1 ms)
+      √ should return status 500 on server error (2 ms)
+    findPost
+      × should return find post object (12 ms)
+      × should return 404 for non-existing post (2 ms)
+      × should return status 500 on server error (1 ms)
+
+  ● Post controller › findPost › should return find post object
+
+    TypeError: Cannot read properties of undefined (reading 'title')
+
+      162 |             sinon.stub(PostModel, 'findPost').yields(null, expectedResult);
+      163 |             PostController.findPost(req, res); // Corrected to use PostController.findPost
+    > 164 |             sinon.assert.calledWith(PostModel.findPost, req.params.title);
+          |                                                                    ^
+      165 |             sinon.assert.calledWith(res.json, sinon.match({ model: req.body.content }));
+      166 |             sinon.assert.calledWith(res.json, sinon.match({ manufacturer: req.body.author }));
+      167 |         });
+
+      at Object.<anonymous> (tests/post.test.js:164:68)
+
+  ● Post controller › findPost › should return 404 for non-existing post
+
+    TypeError: Attempted to wrap findPost which is already wrapped
+
+      168 |
+      169 |         it('should return 404 for non-existing post', () => {
+    > 170 |             sinon.stub(PostModel, 'findPost').yields(null, null);
+          |                   ^
+      171 |             PostController.findPost(req, res);
+      172 |             sinon.assert.calledWith(PostModel.findPost, req.params.title);
+      173 |             sinon.assert.calledWith(res.status, 404);
+
+      at checkWrappedMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:64:21)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:135:13)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:170:19)
+      --------------
+      Error: Stack Trace for original
+      at extendObjectWithWrappedMethods (node_modules/sinon/lib/sinon/util/core/wrap-method.js:169:34)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:157:5)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:162:19)
+
+  ● Post controller › findPost › should return status 500 on server error
+
+    TypeError: Attempted to wrap findPost which is already wrapped
+
+      176 |
+      177 |         it('should return status 500 on server error', () => {
+    > 178 |             sinon.stub(PostModel, 'findPost').yields(error);
+          |                   ^
+      179 |             PostController.findPost(req, res);
+      180 |             sinon.assert.calledWith(PostModel.findPost, req.params.title);
+      181 |             sinon.assert.calledWith(res.status, 500);
+
+      at checkWrappedMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:64:21)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:135:13)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:178:19)
+      --------------
+      Error: Stack Trace for original
+      at extendObjectWithWrappedMethods (node_modules/sinon/lib/sinon/util/core/wrap-method.js:169:34)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:157:5)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:162:19)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 5 passed, 8 total
+Snapshots:   0 total
+Time:        1.318 s, estimated 2 s
+Ran all test suites.
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797
+  const serverSelectionError = new ServerSelectionError();
+                               ^
+
+MongooseServerSelectionError: Error: connect ECONNREFUSED ::1:27017
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797:32)
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+    at Mongoose.Object.<anonymous>.Mongoose.connect (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:329:20)
+    at Object.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\models\connection.js:10:10)
+    at Runtime._execModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1646:24)
+    at Runtime._loadModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1185:12) {
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        _hostAddress: HostAddress { isIPv6: false, host: 'localhost', port: 27017 },
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 37156621,
+        lastWriteDate: 0,
+        error: MongoNetworkError: Error: connect ECONNREFUSED ::1:27017
+            at connectionFailureError (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:390:14)
+            at Socket.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:358:16)
+            at Object.onceWrapper (node:events:628:26)
+            at Socket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21)
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    logicalSessionTimeoutMinutes: undefined
+  }
+}
+
+Node.js v18.16.1
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+
+ RUNS  tests/post.test.js
+^C^CTerminate batch job (Y/N)? y
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  tests/post.test.js
+  Post controller
+    create
+      √ should return the created post object (4 ms)
+      √ should return status 500 on server error (1 ms)
+    update
+      √ should return updated post (1 ms)
+      √ should return status 404 for nonexisting post (2 ms)
+      √ should return status 500 on server error (1 ms)
+    findPost
+      × should return find post object (4 ms)
+      × should return 404 for non-existing post (4 ms)
+      × should return status 500 on server error (1 ms)
+
+  ● Post controller › findPost › should return find post object
+
+    AssertError: expected findPost to be called with arguments
+    {
+      author: 'stswenguser',
+      title: 'My first test post',
+      content: 'Random content'
+    } '"My first test post"'
+    [Function (anonymous)]
+
+      162 |             sinon.stub(PostModel, 'findPost').yields(null, expectedResult);
+      163 |             PostController.findPost(req, res); // Corrected to use PostController.findPost
+    > 164 |             sinon.assert.calledWith(PostModel.findPost, req.body.title);
+          |                          ^
+      165 |             sinon.assert.calledWith(res.json, sinon.match({ model: req.body.content }));
+      166 |             sinon.assert.calledWith(res.json, sinon.match({ manufacturer: req.body.author }));
+      167 |         });
+
+      at Object.fail (node_modules/sinon/lib/sinon/assert.js:120:25)
+      at failAssertion (node_modules/sinon/lib/sinon/assert.js:66:20)
+      at Object.calledWith (node_modules/sinon/lib/sinon/assert.js:95:17)
+      at Object.<anonymous> (tests/post.test.js:164:26)
+
+  ● Post controller › findPost › should return 404 for non-existing post
+
+    TypeError: Attempted to wrap findPost which is already wrapped
+
+      168 |
+      169 |         it('should return 404 for non-existing post', () => {
+    > 170 |             sinon.stub(PostModel, 'findPost').yields(null, null);
+          |                   ^
+      171 |             PostController.findPost(req, res);
+      172 |             sinon.assert.calledWith(PostModel.findPost, req.body.title);
+      173 |             sinon.assert.calledWith(res.status, 404);
+
+      at checkWrappedMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:64:21)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:135:13)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:170:19)
+      --------------
+      Error: Stack Trace for original
+      at extendObjectWithWrappedMethods (node_modules/sinon/lib/sinon/util/core/wrap-method.js:169:34)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:157:5)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:162:19)
+
+  ● Post controller › findPost › should return status 500 on server error
+
+    TypeError: Attempted to wrap findPost which is already wrapped
+
+      176 |
+      177 |         it('should return status 500 on server error', () => {
+    > 178 |             sinon.stub(PostModel, 'findPost').yields(error);
+          |                   ^
+      179 |             PostController.findPost(req, res);
+      180 |             sinon.assert.calledWith(PostModel.findPost, req.body.title);
+      181 |             sinon.assert.calledWith(res.status, 500);
+
+      at checkWrappedMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:64:21)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:135:13)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:178:19)
+      --------------
+      Error: Stack Trace for original
+      at extendObjectWithWrappedMethods (node_modules/sinon/lib/sinon/util/core/wrap-method.js:169:34)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:157:5)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:162:19)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 5 passed, 8 total
+Snapshots:   0 total
+Time:        1.195 s, estimated 2 s
+Ran all test suites.
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797
+  const serverSelectionError = new ServerSelectionError();
+                               ^
+
+MongooseServerSelectionError: Error: connect ECONNREFUSED ::1:27017
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797:32)
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+    at Mongoose.Object.<anonymous>.Mongoose.connect (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:329:20)
+    at Object.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\models\connection.js:10:10)
+    at Runtime._execModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1646:24)
+    at Runtime._loadModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1185:12) {
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        _hostAddress: HostAddress { isIPv6: false, host: 'localhost', port: 27017 },
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 37210716,
+        lastWriteDate: 0,
+        error: MongoNetworkError: Error: connect ECONNREFUSED ::1:27017
+            at connectionFailureError (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:390:14)
+            at Socket.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:358:16)
+            at Object.onceWrapper (node:events:628:26)
+            at Socket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21)
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    logicalSessionTimeoutMinutes: undefined
+  }
+}
+
+Node.js v18.16.1
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  tests/post.test.js
+  Post controller
+    create
+      √ should return the created post object (4 ms)
+      √ should return status 500 on server error (2 ms)
+    update
+      √ should return updated post (2 ms)
+      √ should return status 404 for nonexisting post (2 ms)
+      √ should return status 500 on server error (1 ms)
+    findPost
+      × should return find post object (4 ms)
+      × should return 404 for non-existing post (2 ms)
+      × should return status 500 on server error (4 ms)
+
+  ● Post controller › findPost › should return find post object
+
+    AssertError: expected findPost to be called with arguments
+    {
+      author: 'stswenguser',
+      title: 'My first test post',
+      content: 'Random content'
+    } '"My first test post"'
+    [Function (anonymous)]
+
+      166 |             PostController.findPost(req, res); // Corrected to use PostController.findPost
+      167 |
+    > 168 |             sinon.assert.calledWith(PostModel.findPost, req.body.title);
+          |                          ^
+      169 |             sinon.assert.calledWith(res.json, sinon.match({ model: req.body.content }));
+      170 |             sinon.assert.calledWith(res.json, sinon.match({ manufacturer: req.body.author }));
+      171 |         });
+
+      at Object.fail (node_modules/sinon/lib/sinon/assert.js:120:25)
+      at failAssertion (node_modules/sinon/lib/sinon/assert.js:66:20)
+      at Object.calledWith (node_modules/sinon/lib/sinon/assert.js:95:17)
+      at Object.<anonymous> (tests/post.test.js:168:26)
+
+  ● Post controller › findPost › should return 404 for non-existing post
+
+    TypeError: Attempted to wrap findPost which is already wrapped
+
+      172 |
+      173 |         it('should return 404 for non-existing post', () => {
+    > 174 |             findPostStub = sinon.stub(PostModel, 'findPost').yields(null, null);
+          |                                  ^
+      175 |
+      176 |             PostController.findPost(req, res);
+      177 |
+
+      at checkWrappedMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:64:21)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:135:13)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:174:34)
+      --------------
+      Error: Stack Trace for original
+      at extendObjectWithWrappedMethods (node_modules/sinon/lib/sinon/util/core/wrap-method.js:169:34)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:157:5)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:164:34)
+
+  ● Post controller › findPost › should return status 500 on server error
+
+    TypeError: Attempted to wrap findPost which is already wrapped
+
+      182 |
+      183 |         it('should return status 500 on server error', () => {
+    > 184 |             findPostStub = sinon.stub(PostModel, 'findPost').yields(error);
+          |                                  ^
+      185 |
+      186 |             PostController.findPost(req, res);
+      187 |
+
+      at checkWrappedMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:64:21)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:135:13)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:184:34)
+      --------------
+      Error: Stack Trace for original
+      at extendObjectWithWrappedMethods (node_modules/sinon/lib/sinon/util/core/wrap-method.js:169:34)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:157:5)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:164:34)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 5 passed, 8 total
+Snapshots:   0 total
+Time:        1.26 s, estimated 2 s
+Ran all test suites.
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797
+  const serverSelectionError = new ServerSelectionError();
+                               ^
+
+MongooseServerSelectionError: Error: connect ECONNREFUSED ::1:27017
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797:32)
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+    at Mongoose.Object.<anonymous>.Mongoose.connect (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:329:20)
+    at Object.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\models\connection.js:10:10)
+    at Runtime._execModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1646:24)
+    at Runtime._loadModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1185:12) {
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        _hostAddress: HostAddress { isIPv6: false, host: 'localhost', port: 27017 },
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 37322590,
+        lastWriteDate: 0,
+        error: MongoNetworkError: Error: connect ECONNREFUSED ::1:27017
+            at connectionFailureError (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:390:14)
+            at Socket.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:358:16)
+            at Object.onceWrapper (node:events:628:26)
+            at Socket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21)
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    logicalSessionTimeoutMinutes: undefined
+  }
+}
+
+Node.js v18.16.1
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  tests/post.test.js
+  Post controller
+    create
+      √ should return the created post object (4 ms)
+      √ should return status 500 on server error (1 ms)
+    update
+      √ should return updated post (1 ms)
+      √ should return status 404 for nonexisting post (2 ms)
+      √ should return status 500 on server error (1 ms)
+    findPost
+      × should return find post object (3 ms)
+      × should return 404 for non-existing post (5 ms)
+      × should return status 500 on server error (1 ms)
+
+  ● Post controller › findPost › should return find post object
+
+    AssertError: expected json to be called with arguments
+    {
+      author: 'stswenguser',
+      title: 'My first test post',
+      content: 'Random content'
+    } match(model: Random content)
+
+      167 |
+      168 |             sinon.assert.calledWith(PostModel.findPost, req.body);
+    > 169 |             sinon.assert.calledWith(res.json, sinon.match({ model: req.body.content }));
+          |                          ^
+      170 |             sinon.assert.calledWith(res.json, sinon.match({ manufacturer: req.body.author }));
+      171 |         });
+      172 |
+
+      at Object.fail (node_modules/sinon/lib/sinon/assert.js:120:25)
+      at failAssertion (node_modules/sinon/lib/sinon/assert.js:66:20)
+      at Object.calledWith (node_modules/sinon/lib/sinon/assert.js:95:17)
+      at Object.<anonymous> (tests/post.test.js:169:26)
+
+  ● Post controller › findPost › should return 404 for non-existing post
+
+    TypeError: Attempted to wrap findPost which is already wrapped
+
+      172 |
+      173 |         it('should return 404 for non-existing post', () => {
+    > 174 |             findPostStub = sinon.stub(PostModel, 'findPost').yields(null, null);
+          |                                  ^
+      175 |
+      176 |             PostController.findPost(req, res);
+      177 |
+
+      at checkWrappedMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:64:21)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:135:13)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:174:34)
+      --------------
+      Error: Stack Trace for original
+      at extendObjectWithWrappedMethods (node_modules/sinon/lib/sinon/util/core/wrap-method.js:169:34)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:157:5)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:164:34)
+
+  ● Post controller › findPost › should return status 500 on server error
+
+    TypeError: Attempted to wrap findPost which is already wrapped
+
+      182 |
+      183 |         it('should return status 500 on server error', () => {
+    > 184 |             findPostStub = sinon.stub(PostModel, 'findPost').yields(error);
+          |                                  ^
+      185 |
+      186 |             PostController.findPost(req, res);
+      187 |
+
+      at checkWrappedMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:64:21)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:135:13)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:184:34)
+      --------------
+      Error: Stack Trace for original
+      at extendObjectWithWrappedMethods (node_modules/sinon/lib/sinon/util/core/wrap-method.js:169:34)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:157:5)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:164:34)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 5 passed, 8 total
+Snapshots:   0 total
+Time:        1.262 s, estimated 2 s
+Ran all test suites.
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797
+  const serverSelectionError = new ServerSelectionError();
+                               ^
+
+MongooseServerSelectionError: Error: connect ECONNREFUSED ::1:27017
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797:32)
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+    at Mongoose.Object.<anonymous>.Mongoose.connect (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:329:20)
+    at Object.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\models\connection.js:10:10)
+    at Runtime._execModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1646:24)
+    at Runtime._loadModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1185:12) {
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        _hostAddress: HostAddress { isIPv6: false, host: 'localhost', port: 27017 },
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 37415799,
+        lastWriteDate: 0,
+        error: MongoNetworkError: Error: connect ECONNREFUSED ::1:27017
+            at connectionFailureError (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:390:14)
+            at Socket.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:358:16)
+            at Object.onceWrapper (node:events:628:26)
+            at Socket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21)
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    logicalSessionTimeoutMinutes: undefined
+  }
+}
+
+Node.js v18.16.1
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  tests/post.test.js
+  Post controller
+    create
+      √ should return the created post object (4 ms)
+      √ should return status 500 on server error (1 ms)
+    update
+      √ should return updated post (2 ms)
+      √ should return status 404 for nonexisting post (2 ms)
+      √ should return status 500 on server error (1 ms)
+    findPost
+      √ should return find post object (1 ms)
+      × should return 404 for non-existing post (13 ms)
+      × should return status 500 on server error (4 ms)
+
+  ● Post controller › findPost › should return 404 for non-existing post
+
+    TypeError: Attempted to wrap findPost which is already wrapped
+
+      173 |
+      174 |         it('should return 404 for non-existing post', () => {
+    > 175 |             findPostStub = sinon.stub(PostModel, 'findPost').yields(null, null);
+          |                                  ^
+      176 |
+      177 |             PostController.findPost(req, res);
+      178 |
+
+      at checkWrappedMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:64:21)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:135:13)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:175:34)
+      --------------
+      Error: Stack Trace for original
+      at extendObjectWithWrappedMethods (node_modules/sinon/lib/sinon/util/core/wrap-method.js:169:34)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:157:5)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:164:34)
+
+  ● Post controller › findPost › should return status 500 on server error
+
+    TypeError: Attempted to wrap findPost which is already wrapped
+
+      183 |
+      184 |         it('should return status 500 on server error', () => {
+    > 185 |             findPostStub = sinon.stub(PostModel, 'findPost').yields(error);
+          |                                  ^
+      186 |
+      187 |             PostController.findPost(req, res);
+      188 |
+
+      at checkWrappedMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:64:21)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:135:13)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:185:34)
+      --------------
+      Error: Stack Trace for original
+      at extendObjectWithWrappedMethods (node_modules/sinon/lib/sinon/util/core/wrap-method.js:169:34)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:157:5)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:164:34)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 6 passed, 8 total
+Snapshots:   0 total
+Time:        1.281 s, estimated 2 s
+Ran all test suites.
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797
+  const serverSelectionError = new ServerSelectionError();
+                               ^
+
+MongooseServerSelectionError: Error: connect ECONNREFUSED ::1:27017
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797:32)
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+    at Mongoose.Object.<anonymous>.Mongoose.connect (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:329:20)
+    at Object.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\models\connection.js:10:10)
+    at Runtime._execModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1646:24)
+    at Runtime._loadModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1185:12) {
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        _hostAddress: HostAddress { isIPv6: false, host: 'localhost', port: 27017 },
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 37464347,
+        lastWriteDate: 0,
+        error: MongoNetworkError: Error: connect ECONNREFUSED ::1:27017
+            at connectionFailureError (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:390:14)
+            at Socket.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:358:16)
+            at Object.onceWrapper (node:events:628:26)
+            at Socket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21)
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    logicalSessionTimeoutMinutes: undefined
+  }
+}
+
+Node.js v18.16.1
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  tests/post.test.js
+  Post controller
+    create
+      √ should return the created post object (4 ms)
+      √ should return status 500 on server error (2 ms)
+    update
+      √ should return updated post (1 ms)
+      √ should return status 404 for nonexisting post (2 ms)
+      √ should return status 500 on server error (1 ms)
+    findPost
+      √ should return find post object (1 ms)
+      × should return 404 for non-existing post (5 ms)
+      × should return status 500 on server error (3 ms)
+
+  ● Post controller › findPost › should return 404 for non-existing post
+
+    AssertError: expected findPost to be called with arguments
+    Call 1:
+    {
+      author: 'stswenguser',
+      title: 'My first test post',
+      content: 'Random content'
+    } '"My first test post"'
+    [Function (anonymous)]
+    Call 2:
+    {
+      author: 'stswenguser',
+      title: 'My first test post',
+      content: 'Random content'
+    } '"My first test post"'
+    [Function (anonymous)]
+
+      178 |             PostController.findPost(req, res);
+      179 |
+    > 180 |             sinon.assert.calledWith(PostModel.findPost, req.body.title);
+          |                          ^
+      181 |             sinon.assert.calledWith(res.status, 404);
+      182 |             sinon.assert.calledOnce(res.status(404).end);
+      183 |         });
+
+      at Object.fail (node_modules/sinon/lib/sinon/assert.js:120:25)
+      at failAssertion (node_modules/sinon/lib/sinon/assert.js:66:20)
+      at Object.calledWith (node_modules/sinon/lib/sinon/assert.js:95:17)
+      at Object.<anonymous> (tests/post.test.js:180:26)
+
+  ● Post controller › findPost › should return status 500 on server error
+
+    TypeError: Attempted to wrap findPost which is already wrapped
+
+      184 |
+      185 |         it('should return status 500 on server error', () => {
+    > 186 |             findPostStub = sinon.stub(PostModel, 'findPost').yields(error);
+          |                                  ^
+      187 |
+      188 |             PostController.findPost(req, res);
+      189 |
+
+      at checkWrappedMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:64:21)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:135:13)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:186:34)
+      --------------
+      Error: Stack Trace for original
+      at extendObjectWithWrappedMethods (node_modules/sinon/lib/sinon/util/core/wrap-method.js:169:34)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:157:5)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:164:34)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 6 passed, 8 total
+Snapshots:   0 total
+Time:        1.302 s, estimated 2 s
+Ran all test suites.
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+^C^CTerminate batch job (Y/N)? y
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ FAIL  tests/post.test.js
+  Post controller
+    create
+      √ should return the created post object (4 ms)
+      √ should return status 500 on server error (1 ms)
+    update
+      √ should return updated post (1 ms)
+      √ should return status 404 for nonexisting post (1 ms)
+      √ should return status 500 on server error (1 ms)
+    findPost
+      √ should return find post object (1 ms)
+      √ should return 404 for non-existing post (5 ms)
+      × should return status 500 on server error (13 ms)
+
+  ● Post controller › findPost › should return status 500 on server error
+
+    TypeError: Attempted to wrap findPost which is already wrapped
+
+      184 |
+      185 |         it('should return status 500 on server error', () => {
+    > 186 |             findPostStub = sinon.stub(PostModel, 'findPost').yields(error);
+          |                                  ^
+      187 |
+      188 |             PostController.findPost(req, res);
+      189 |
+
+      at checkWrappedMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:64:21)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:135:13)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:186:34)
+      --------------
+      Error: Stack Trace for original
+      at extendObjectWithWrappedMethods (node_modules/sinon/lib/sinon/util/core/wrap-method.js:169:34)
+      at wrapMethod (node_modules/sinon/lib/sinon/util/core/wrap-method.js:157:5)
+      at Function.stub (node_modules/sinon/lib/sinon/stub.js:123:44)
+      at Sandbox.stub (node_modules/sinon/lib/sinon/sandbox.js:388:37)
+      at Object.<anonymous> (tests/post.test.js:164:34)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 7 passed, 8 total
+Snapshots:   0 total
+Time:        1.222 s, estimated 2 s
+Ran all test suites.
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797
+  const serverSelectionError = new ServerSelectionError();
+                               ^
+
+MongooseServerSelectionError: Error: connect ECONNREFUSED ::1:27017
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797:32)
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+    at Mongoose.Object.<anonymous>.Mongoose.connect (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:329:20)
+    at Object.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\models\connection.js:10:10)
+    at Runtime._execModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1646:24)
+    at Runtime._loadModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1185:12) {
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        _hostAddress: HostAddress { isIPv6: false, host: 'localhost', port: 27017 },
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 37571114,
+        lastWriteDate: 0,
+        error: MongoNetworkError: Error: connect ECONNREFUSED ::1:27017
+            at connectionFailureError (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:390:14)
+            at Socket.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:358:16)
+            at Object.onceWrapper (node:events:628:26)
+            at Socket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21)
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    logicalSessionTimeoutMinutes: undefined
+  }
+}
+
+Node.js v18.16.1
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>npm test
+
+> unit-mvc@1.0.0 test
+> jest --color
+
+ PASS  tests/post.test.js
+  Post controller
+    create
+      √ should return the created post object (4 ms)
+      √ should return status 500 on server error (1 ms)
+    update
+      √ should return updated post (1 ms)
+      √ should return status 404 for nonexisting post (1 ms)
+      √ should return status 500 on server error (1 ms)
+    findPost
+      √ should return find post object (1 ms)
+      √ should return 404 for non-existing post (1 ms)
+      √ should return status 500 on server error (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        1.196 s, estimated 2 s
+Ran all test suites.
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797
+  const serverSelectionError = new ServerSelectionError();
+                               ^
+
+MongooseServerSelectionError: Error: connect ECONNREFUSED ::1:27017
+    at NativeConnection.Object.<anonymous>.Connection.openUri (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\connection.js:797:32)
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:330:10
+    at C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose.Object.<anonymous>.Mongoose._promiseOrCallback (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:1151:10)
+    at Mongoose.Object.<anonymous>.Mongoose.connect (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongoose\lib\index.js:329:20)
+    at Object.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\models\connection.js:10:10)
+    at Runtime._execModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1646:24)
+    at Runtime._loadModule (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\jest-runtime\build\index.js:1185:12) {
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        _hostAddress: HostAddress { isIPv6: false, host: 'localhost', port: 27017 },
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 37608422,
+        lastWriteDate: 0,
+        error: MongoNetworkError: Error: connect ECONNREFUSED ::1:27017
+            at connectionFailureError (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:390:14)
+            at Socket.<anonymous> (C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc\node_modules\mongodb\src\cmap\connect.ts:358:16)
+            at Object.onceWrapper (node:events:628:26)
+            at Socket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21)
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    logicalSessionTimeoutMinutes: undefined
+  }
+}
+
+Node.js v18.16.1
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>git commit -am "Passed test cases for findPost functionality"
+[main 47eca88] Passed test cases for findPost functionality
+ 2 files changed, 28 insertions(+), 11 deletions(-)
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>git push origin main
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 817 bytes | 817.00 KiB/s, done.
+Total 7 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/kit-kate15/STSWENG-TDD-with-Jest.git
+   e1c5ee7..47eca88  main -> main
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>history.txt
+'history.txt' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>scp
+usage: scp [-346ABCpqrTv] [-c cipher] [-F ssh_config] [-i identity_file]
+            [-J destination] [-l limit] [-o ssh_option] [-P port]
+            [-S program] source ... target
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>history.txt
+
+C:\school\stsweng\STSWENG-TDD-with-Jest\node-unit-mvc>^A
