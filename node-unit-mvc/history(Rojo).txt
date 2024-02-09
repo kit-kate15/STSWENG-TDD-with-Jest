@@ -1,4 +1,3 @@
-
 C:\Users\hp\OneDrive - De La Salle University - Manila\Documents\Programming Files\STSWENG Files\STSWENG-TDD-with-Jest\node-unit-mvc>npm install -g jest
 
 changed 290 packages in 31s
