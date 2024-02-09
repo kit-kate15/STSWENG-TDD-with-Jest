@@ -9,6 +9,7 @@ const postSchema = new mongoose.Schema({
 );
 
 const Post = mongoose.model('posts', postSchema);
+// mongoose.exports = mongoose.model('posts', postSchema);
 
 exports.createPost = (obj, next) => {
     const post = new Post(obj);
@@ -19,6 +20,6 @@ exports.createPost = (obj, next) => {
 }
 
 // TODO: create updatePost implementation
-exports.updatePost = () => {
-
+exports.updatePost = (obj, next) => {
+    
 }

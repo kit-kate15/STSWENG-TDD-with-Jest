@@ -49,7 +49,7 @@ describe('Post controller', () => {
                 author: 'stswenguser',
                 date: Date.now()
             };
-
+                                                    //createPost
             createPostStub = sinon.stub(PostModel, 'createPost').yields(null, expectedResult);
 
             // Act
@@ -67,6 +67,7 @@ describe('Post controller', () => {
         // Error Scenario
         it('should return status 500 on server error', () => {
             // Arrange
+                                                    //createPost
             createPostStub = sinon.stub(PostModel, 'createPost').yields(error);
 
             // Act
@@ -84,65 +85,57 @@ describe('Post controller', () => {
     });
 
     describe('update', () => {
-        var updatedPost;
+        var updatePostStub;
 
-        it('should edit the title of an already existing post', () => {
-            // Arrange
-            expectedResult = {
-                _id: '507asdghajsdhjgasd',
-                title: 'My first updated test post',
-                content: 'Random content',
-                author: 'stswenguser',
-                date: Date.now()
+        beforeEach(() => {
+            res = {
+                json: sinon.spy(),
+                status: sinon.stub().returns({ end: sinon.spy() })
             };
+            expectedResult = req.body
+        });
 
-            updatedPost = sinon.stub(PostModel, 'updatePost').yields(null, expectedResult);
+        it('should return updated post', () => {
+            // Arrange
+            updatePostStub = sinon.stub(PostModel, 'updatePost').yields(null, expectedResult);
 
             // Act
             PostController.update(req, res);
 
             // Assert
-            sinon.assert.calledWith(PostModel.updatePost, req.body);
+            sinon.assert.calledWith(PostModel.updatePost, req.body, { new: true });
             sinon.assert.calledWith(res.json, sinon.match({ title: req.body.title }));
             sinon.assert.calledWith(res.json, sinon.match({ content: req.body.content }));
             sinon.assert.calledWith(res.json, sinon.match({ author: req.body.author }));
         });
 
-        it('should edit the content of an already existing post', () => {
+        it('should return status 404 for nonexisting post', () => {
             // Arrange
-            expectedResult = {
-                _id: '507asdghajsdhjgasd',
-                title: 'My first test post',
-                content: 'Updated content',
-                author: 'stswenguser',
-                date: Date.now()
-            };
-
-            updatedPost = sinon.stub(PostModel, 'updatePost').yields(null, expectedResult);
+            updatePostStub = sinon.stub(PostModel, 'updatePost').yields(null, null);
 
             // Act
             PostController.update(req, res);
 
             // Assert
-            sinon.assert.calledWith(PostModel.updatePost, req.body);
-            sinon.assert.calledWith(res.json, sinon.match({ title: req.body.title }));
-            sinon.assert.calledWith(res.json, sinon.match({ content: req.body.content }));
-            sinon.assert.calledWith(res.json, sinon.match({ author: req.body.author }));
+            sinon.assert.calledWith(PostModel.updatePost, req.body, { new: true });
+            sinon.assert.calledWith(res.status, 404);
+            sinon.assert.calledOnce(res.status(404).end);
         });
 
-        // Error scenario
         it('should return status 500 on server error', () => {
             // Arrange
-            updatedPost = sinon.stub(PostModel, 'updatePost').yields(error);
+            updatePostStub = sinon.stub(PostModel, 'updatePost').yields(error);
 
             // Act
             PostController.update(req, res);
 
             // Assert
-            sinon.assert.calledWith(PostModel.updatePost, req.body);
+            sinon.assert.calledWith(PostModel.updatePost, req.body, { new: true });
             sinon.assert.calledWith(res.status, 500);
             sinon.assert.calledOnce(res.status(500).end);
         });
+
+
     });
 
     describe('findPost', () => {
