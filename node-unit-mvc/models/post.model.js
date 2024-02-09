@@ -28,3 +28,8 @@ exports.updatePost = (obj, next) => {
         next(err, post);
     })
 }
+
+//TODO: create findPost implementation
+exports.findpost = (obj, next) => {
+    
+}
